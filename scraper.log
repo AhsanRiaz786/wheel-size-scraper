@@ -1,0 +1,627 @@
+2025-07-14 15:46:32,191 [INFO] --- Starting Scraper with 4 workers ---
+2025-07-14 15:46:32,202 [INFO] Found 1326 total potential tasks.
+2025-07-14 15:46:32,202 [INFO] Skipping 0 already completed tasks.
+2025-07-14 15:46:32,202 [INFO] Queuing 1326 tasks to be processed.
+2025-07-14 15:46:33,319 [INFO] Discovering models for ACURA 2024...
+2025-07-14 15:46:33,322 [INFO] Discovering models for ACURA 2023...
+2025-07-14 15:46:33,323 [INFO] Discovering models for ACURA 2022...
+2025-07-14 15:46:33,323 [INFO] Discovering models for ACURA 2025...
+2025-07-14 15:46:37,751 [INFO] Found 7 models for ACURA 2023.
+2025-07-14 15:46:37,751 [INFO] ⏭️  Skipping existing file: acura/2023/acura__integra__2023.json
+2025-07-14 15:46:38,977 [INFO] Found 7 models for ACURA 2022.
+2025-07-14 15:46:40,169 [INFO] Found 6 models for ACURA 2025.
+2025-07-14 15:46:40,169 [INFO] ⏭️  Skipping existing file: acura/2025/acura__adx__2025.json
+2025-07-14 15:46:40,169 [INFO] ⏭️  Skipping existing file: acura/2025/acura__integra__2025.json
+2025-07-14 15:46:42,660 [INFO] ✓ Scraped and saved acura/integra-type-s/2023
+2025-07-14 15:46:43,080 [WARNING] ✗ No US market data found for acura/cdx/2022
+2025-07-14 15:46:43,440 [INFO] ✓ Scraped and saved acura/integra-type-s/2025
+2025-07-14 15:46:44,442 [INFO] ⏭️  Skipping existing file: acura/2025/acura__mdx__2025.json
+2025-07-14 15:46:44,442 [INFO] ⏭️  Skipping existing file: acura/2025/acura__rdx__2025.json
+2025-07-14 15:46:44,443 [INFO] ⏭️  Skipping existing file: acura/2025/acura__tlx__2025.json
+2025-07-14 15:46:44,443 [INFO] 🏁 Marked ACURA 2025 as complete.
+2025-07-14 15:46:44,896 [INFO] Discovering models for ACURA 2021...
+2025-07-14 15:46:46,901 [INFO] ✓ Scraped and saved acura/mdx/2023
+2025-07-14 15:46:47,388 [INFO] ✓ Scraped and saved acura/ilx/2022
+2025-07-14 15:46:50,680 [INFO] Found 8 models for ACURA 2021.
+2025-07-14 15:46:51,441 [INFO] ✓ Scraped and saved acura/nsx/2023
+2025-07-14 15:46:51,609 [INFO] ✓ Scraped and saved acura/integra/2022
+2025-07-14 15:46:54,450 [WARNING] ✗ No US market data found for acura/cdx/2021
+2025-07-14 15:46:56,126 [INFO] ✓ Scraped and saved acura/rdx/2023
+2025-07-14 15:46:56,225 [INFO] ✓ Scraped and saved acura/mdx/2022
+2025-07-14 15:46:59,120 [INFO] ✓ Scraped and saved acura/ilx/2021
+2025-07-14 15:47:00,585 [INFO] ✓ Scraped and saved acura/tlx/2023
+2025-07-14 15:47:01,415 [INFO] ✓ Scraped and saved acura/nsx/2022
+2025-07-14 15:47:03,393 [INFO] ✓ Scraped and saved acura/mdx/2021
+2025-07-14 15:47:05,573 [INFO] ✓ Scraped and saved acura/zdx/2023
+2025-07-14 15:47:06,053 [INFO] ✓ Scraped and saved acura/rdx/2022
+2025-07-14 15:47:06,575 [INFO] 🏁 Marked ACURA 2023 as complete.
+2025-07-14 15:47:06,998 [INFO] Discovering models for ACURA 2020...
+2025-07-14 15:47:10,436 [INFO] Found 8 models for ACURA 2020.
+2025-07-14 15:47:11,291 [ERROR] Critical timeout discovering models for acura 2024. Skipping.
+2025-07-14 15:47:11,634 [INFO] Discovering models for ACURA 2019...
+2025-07-14 15:47:15,512 [INFO] Found 8 models for ACURA 2019.
+2025-07-14 15:47:32,229 [WARNING] Timeout for https://www.wheel-size.com/size/acura/nsx/2021/. Attempt 1/5. Retrying in 30s...
+2025-07-14 15:47:34,005 [WARNING] Timeout for https://www.wheel-size.com/size/acura/tlx/2022/. Attempt 1/5. Retrying in 30s...
+2025-07-14 15:47:35,398 [WARNING] Timeout for https://www.wheel-size.com/size/acura/cdx/2020/. Attempt 1/5. Retrying in 30s...
+2025-07-14 15:47:40,494 [WARNING] Timeout for https://www.wheel-size.com/size/acura/cdx/2019/. Attempt 1/5. Retrying in 30s...
+2025-07-14 15:48:06,138 [WARNING] 
+--- Scraper Interrupted by User ---
+2025-07-14 15:48:06,174 [ERROR] Task was destroyed but it is pending!
+task: <Task cancelling name='Task-2' coro=<process_make_year() running at /Users/ahsanriaz/Developer/tiresize-scraper/main.py:236> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228, <1 more>, ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228]>
+2025-07-14 15:48:06,175 [ERROR] Task was destroyed but it is pending!
+task: <Task cancelling name='Task-3' coro=<process_make_year() running at /Users/ahsanriaz/Developer/tiresize-scraper/main.py:236> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[gather.<locals>._done_callback() at /opt/anaconda3/lib/python3.13/asyncio/tasks.py:820, ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228]>
+2025-07-14 15:48:06,175 [ERROR] Task was destroyed but it is pending!
+task: <Task cancelling name='Task-4' coro=<process_make_year() running at /Users/ahsanriaz/Developer/tiresize-scraper/main.py:236> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228, <1 more>, ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228]>
+2025-07-14 15:48:06,175 [ERROR] Task was destroyed but it is pending!
+task: <Task cancelling name='Task-5' coro=<process_make_year() running at /Users/ahsanriaz/Developer/tiresize-scraper/main.py:236> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228, <1 more>, ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228]>
+2025-07-14 15:51:07,462 [INFO] --- Starting Scraper with 4 workers ---
+2025-07-14 15:51:07,469 [INFO] Found 1326 total potential tasks.
+2025-07-14 15:51:07,469 [INFO] Skipping 2 already completed tasks.
+2025-07-14 15:51:07,469 [INFO] Queuing 1324 tasks to be processed.
+2025-07-14 15:51:08,432 [INFO] Discovering models for ACURA 2021...
+2025-07-14 15:51:08,434 [INFO] Discovering models for ACURA 2020...
+2025-07-14 15:51:08,435 [INFO] Discovering models for ACURA 2022...
+2025-07-14 15:51:08,435 [INFO] Discovering models for ACURA 2024...
+2025-07-14 15:51:13,376 [INFO] Found 8 models for ACURA 2020.
+2025-07-14 15:51:14,505 [INFO] Found 7 models for ACURA 2022.
+2025-07-14 15:51:15,778 [INFO] Found 6 models for ACURA 2024.
+2025-07-14 15:51:15,778 [INFO] ⏭️  Skipping existing file: acura/2024/acura__integra__2024.json
+2025-07-14 15:51:27,597 [WARNING] 
+--- Scraper Interrupted by User ---
+2025-07-14 15:51:27,615 [ERROR] Task was destroyed but it is pending!
+task: <Task cancelling name='Task-2' coro=<process_make_year() running at /Users/ahsanriaz/Developer/tiresize-scraper/main.py:236> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228, <1 more>, ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228]>
+2025-07-14 15:51:27,616 [ERROR] Task was destroyed but it is pending!
+task: <Task cancelling name='Task-3' coro=<process_make_year() running at /Users/ahsanriaz/Developer/tiresize-scraper/main.py:236> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228, <1 more>, ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228]>
+2025-07-14 15:51:27,616 [ERROR] Task was destroyed but it is pending!
+task: <Task cancelling name='Task-4' coro=<process_make_year() running at /Users/ahsanriaz/Developer/tiresize-scraper/main.py:236> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228, <1 more>, ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228]>
+2025-07-14 15:51:27,616 [ERROR] Task was destroyed but it is pending!
+task: <Task cancelling name='Task-5' coro=<process_make_year() running at /Users/ahsanriaz/Developer/tiresize-scraper/main.py:236> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228, <1 more>, ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228]>
+2025-07-14 15:51:35,179 [INFO] --- Starting Scraper with 2 workers ---
+2025-07-14 15:51:35,187 [INFO] Found 1326 total potential tasks.
+2025-07-14 15:51:35,187 [INFO] Skipping 2 already completed tasks.
+2025-07-14 15:51:35,187 [INFO] Queuing 1324 tasks to be processed.
+2025-07-14 15:51:35,602 [INFO] Discovering models for ACURA 2022...
+2025-07-14 15:51:35,604 [INFO] Discovering models for ACURA 2024...
+2025-07-14 15:51:39,594 [INFO] Found 6 models for ACURA 2024.
+2025-07-14 15:51:39,594 [INFO] ⏭️  Skipping existing file: acura/2024/acura__integra__2024.json
+2025-07-14 15:51:39,822 [INFO] Found 7 models for ACURA 2022.
+2025-07-14 15:52:03,424 [WARNING] Timeout for https://www.wheel-size.com/size/acura/cdx/2022/. Attempt 1/5. Retrying in 30s...
+2025-07-14 15:52:05,257 [WARNING] Timeout for https://www.wheel-size.com/size/acura/integra-type-s/2024/. Attempt 1/5. Retrying in 30s...
+2025-07-14 15:52:19,247 [WARNING] 
+--- Scraper Interrupted by User ---
+2025-07-14 15:52:19,263 [ERROR] Task was destroyed but it is pending!
+task: <Task cancelling name='Task-2' coro=<process_make_year() running at /Users/ahsanriaz/Developer/tiresize-scraper/main.py:236> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[gather.<locals>._done_callback() at /opt/anaconda3/lib/python3.13/asyncio/tasks.py:820, ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228]>
+2025-07-14 15:52:19,264 [ERROR] Task was destroyed but it is pending!
+task: <Task cancelling name='Task-3' coro=<process_make_year() running at /Users/ahsanriaz/Developer/tiresize-scraper/main.py:236> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[gather.<locals>._done_callback() at /opt/anaconda3/lib/python3.13/asyncio/tasks.py:820, ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228]>
+2025-07-14 15:53:04,885 [INFO] --- Starting Scraper with 2 workers ---
+2025-07-14 15:53:04,892 [INFO] Found 1326 total potential tasks.
+2025-07-14 15:53:04,892 [INFO] Skipping 2 already completed tasks.
+2025-07-14 15:53:04,892 [INFO] Queuing 1324 tasks to be processed.
+2025-07-14 15:53:05,728 [INFO] Discovering models for ACURA 2022...
+2025-07-14 15:53:05,730 [INFO] Discovering models for ACURA 2024...
+2025-07-14 15:53:12,518 [INFO] Found 7 models for ACURA 2022.
+2025-07-14 15:53:15,885 [WARNING] ✗ No US market data found for acura/cdx/2022
+2025-07-14 15:53:16,887 [INFO] ⏭️  Skipping existing file: acura/2022/acura__ilx__2022.json
+2025-07-14 15:53:16,888 [INFO] ⏭️  Skipping existing file: acura/2022/acura__integra__2022.json
+2025-07-14 15:53:16,888 [INFO] ⏭️  Skipping existing file: acura/2022/acura__mdx__2022.json
+2025-07-14 15:53:16,888 [INFO] ⏭️  Skipping existing file: acura/2022/acura__nsx__2022.json
+2025-07-14 15:53:16,889 [INFO] ⏭️  Skipping existing file: acura/2022/acura__rdx__2022.json
+2025-07-14 15:53:18,838 [INFO] ✓ Scraped and saved acura/tlx/2022
+2025-07-14 15:53:19,840 [INFO] 🏁 Marked ACURA 2022 as complete.
+2025-07-14 15:53:20,239 [INFO] Discovering models for ACURA 2021...
+2025-07-14 15:53:42,432 [ERROR] Critical timeout discovering models for acura 2024. Skipping.
+2025-07-14 15:53:42,805 [INFO] Discovering models for ACURA 2020...
+2025-07-14 15:53:48,791 [INFO] Found 8 models for ACURA 2020.
+2025-07-14 15:53:52,216 [WARNING] ✗ No US market data found for acura/cdx/2020
+2025-07-14 15:53:55,497 [INFO] ✓ Scraped and saved acura/ilx/2020
+2025-07-14 15:53:56,418 [ERROR] Critical timeout discovering models for acura 2021. Skipping.
+2025-07-14 15:53:56,820 [INFO] Discovering models for ACURA 2019...
+2025-07-14 15:53:58,566 [INFO] ✓ Scraped and saved acura/mdx/2020
+2025-07-14 15:54:01,423 [INFO] ✓ Scraped and saved acura/nsx/2020
+2025-07-14 15:54:02,992 [INFO] Found 8 models for ACURA 2019.
+2025-07-14 15:54:04,804 [INFO] ✓ Scraped and saved acura/rdx/2020
+2025-07-14 15:54:06,151 [WARNING] ✗ No US market data found for acura/cdx/2019
+2025-07-14 15:54:09,456 [INFO] ✓ Scraped and saved acura/ilx/2019
+2025-07-14 15:54:09,585 [INFO] ✓ Scraped and saved acura/rlx/2020
+2025-07-14 15:54:12,657 [INFO] ✓ Scraped and saved acura/mdx/2019
+2025-07-14 15:54:13,658 [INFO] ✓ Scraped and saved acura/tlx/2020
+2025-07-14 15:54:16,021 [INFO] ✓ Scraped and saved acura/nsx/2019
+2025-07-14 15:54:17,211 [WARNING] ✗ No US market data found for acura/tlx-l/2020
+2025-07-14 15:54:18,213 [INFO] 🏁 Marked ACURA 2020 as complete.
+2025-07-14 15:54:18,615 [INFO] Discovering models for ACURA 2018...
+2025-07-14 15:54:19,332 [INFO] ✓ Scraped and saved acura/rdx/2019
+2025-07-14 15:54:23,084 [INFO] ✓ Scraped and saved acura/rlx/2019
+2025-07-14 15:54:24,024 [INFO] Found 8 models for ACURA 2018.
+2025-07-14 15:54:26,580 [INFO] ✓ Scraped and saved acura/tlx/2019
+2025-07-14 15:54:28,123 [WARNING] ✗ No US market data found for acura/cdx/2018
+2025-07-14 15:54:29,943 [WARNING] ✗ No US market data found for acura/tlx-l/2019
+2025-07-14 15:54:30,944 [INFO] 🏁 Marked ACURA 2019 as complete.
+2025-07-14 15:54:31,299 [INFO] Discovering models for ACURA 2017...
+2025-07-14 15:54:31,440 [INFO] ✓ Scraped and saved acura/ilx/2018
+2025-07-14 15:54:34,932 [INFO] ✓ Scraped and saved acura/mdx/2018
+2025-07-14 15:54:37,943 [INFO] Found 7 models for ACURA 2017.
+2025-07-14 15:54:38,242 [INFO] ✓ Scraped and saved acura/nsx/2018
+2025-07-14 15:54:41,040 [WARNING] ✗ No US market data found for acura/cdx/2017
+2025-07-14 15:54:42,056 [INFO] ✓ Scraped and saved acura/rdx/2018
+2025-07-14 15:54:44,102 [INFO] ✓ Scraped and saved acura/ilx/2017
+2025-07-14 15:55:08,476 [WARNING] Timeout for https://www.wheel-size.com/size/acura/rlx/2018/. Attempt 1/5. Retrying in 30s...
+2025-07-14 15:55:10,207 [WARNING] Timeout for https://www.wheel-size.com/size/acura/mdx/2017/. Attempt 1/5. Retrying in 30s...
+2025-07-14 15:56:00,006 [WARNING] Timeout for https://www.wheel-size.com/size/acura/rlx/2018/. Attempt 2/5. Retrying in 60s...
+2025-07-14 15:56:01,497 [WARNING] Timeout for https://www.wheel-size.com/size/acura/mdx/2017/. Attempt 2/5. Retrying in 60s...
+2025-07-14 15:57:25,492 [WARNING] Timeout for https://www.wheel-size.com/size/acura/mdx/2017/. Attempt 3/5. Retrying in 120s...
+2025-07-14 15:57:25,511 [WARNING] Timeout for https://www.wheel-size.com/size/acura/rlx/2018/. Attempt 3/5. Retrying in 120s...
+2025-07-14 15:58:44,750 [WARNING] 
+--- Scraper Interrupted by User ---
+2025-07-14 15:58:44,799 [ERROR] Task was destroyed but it is pending!
+task: <Task cancelling name='Task-2' coro=<process_make_year() running at /Users/ahsanriaz/Developer/tiresize-scraper/main.py:236> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[gather.<locals>._done_callback() at /opt/anaconda3/lib/python3.13/asyncio/tasks.py:820, ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228]>
+2025-07-14 15:58:44,799 [ERROR] Task was destroyed but it is pending!
+task: <Task cancelling name='Task-3' coro=<process_make_year() running at /Users/ahsanriaz/Developer/tiresize-scraper/main.py:236> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[gather.<locals>._done_callback() at /opt/anaconda3/lib/python3.13/asyncio/tasks.py:820, ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228]>
+2025-07-14 16:25:05,671 [INFO] Loaded 10 valid proxies.
+2025-07-14 16:25:05,672 [INFO] --- Starting Scraper with 2 workers ---
+2025-07-14 16:25:05,679 [INFO] Found 1326 total potential tasks.
+2025-07-14 16:25:05,680 [INFO] Skipping 5 already completed tasks.
+2025-07-14 16:25:05,680 [INFO] Queuing 1321 tasks to be processed.
+2025-07-14 16:25:05,698 [INFO] Worker starting on ACURA/2024 using proxy http://38.154.227.167:5868
+2025-07-14 16:25:05,698 [INFO] Worker starting on ACURA/2021 using proxy http://92.113.242.158:6742
+2025-07-14 16:25:06,742 [INFO] Discovering models for ACURA 2024...
+2025-07-14 16:25:06,744 [INFO] Discovering models for ACURA 2021...
+2025-07-14 16:25:13,460 [INFO] Found 8 models for ACURA 2021.
+2025-07-14 16:25:19,062 [WARNING] ✗ No US market data found for acura/cdx/2021
+2025-07-14 16:25:20,064 [INFO] ⏭️  Skipping existing file: acura/2021/acura__ilx__2021.json
+2025-07-14 16:25:20,065 [INFO] ⏭️  Skipping existing file: acura/2021/acura__mdx__2021.json
+2025-07-14 16:25:23,638 [INFO] ✓ Scraped and saved acura/nsx/2021
+2025-07-14 16:25:33,010 [INFO] ✓ Scraped and saved acura/rdx/2021
+2025-07-14 16:25:38,543 [ERROR] Critical timeout discovering models for acura 2024. Skipping.
+2025-07-14 16:25:38,593 [INFO] Worker starting on ACURA/2018 using proxy http://23.95.150.145:6114
+2025-07-14 16:25:38,863 [INFO] ✓ Scraped and saved acura/rlx/2021
+2025-07-14 16:25:39,066 [INFO] Discovering models for ACURA 2018...
+2025-07-14 16:25:44,690 [INFO] ✓ Scraped and saved acura/tlx/2021
+2025-07-14 16:25:46,210 [INFO] Found 8 models for ACURA 2018.
+2025-07-14 16:25:49,982 [WARNING] ✗ No US market data found for acura/tlx-l/2021
+2025-07-14 16:25:50,984 [INFO] 🏁 Marked ACURA 2021 as complete.
+2025-07-14 16:25:51,037 [INFO] Worker starting on ACURA/2017 using proxy http://198.23.239.134:6540
+2025-07-14 16:25:51,383 [INFO] Discovering models for ACURA 2017...
+2025-07-14 16:25:57,412 [WARNING] ✗ No US market data found for acura/cdx/2018
+2025-07-14 16:25:58,414 [INFO] ⏭️  Skipping existing file: acura/2018/acura__ilx__2018.json
+2025-07-14 16:25:58,414 [INFO] ⏭️  Skipping existing file: acura/2018/acura__mdx__2018.json
+2025-07-14 16:25:58,414 [INFO] ⏭️  Skipping existing file: acura/2018/acura__nsx__2018.json
+2025-07-14 16:25:58,414 [INFO] ⏭️  Skipping existing file: acura/2018/acura__rdx__2018.json
+2025-07-14 16:25:59,284 [INFO] Found 7 models for ACURA 2017.
+2025-07-14 16:26:12,015 [WARNING] ✗ No US market data found for acura/cdx/2017
+2025-07-14 16:26:13,017 [INFO] ⏭️  Skipping existing file: acura/2017/acura__ilx__2017.json
+2025-07-14 16:26:28,077 [INFO] ✓ Scraped and saved acura/mdx/2017
+2025-07-14 16:26:28,423 [WARNING] Timeout for https://www.wheel-size.com/size/acura/rlx/2018/. Attempt 1/5. Retrying in 30s...
+2025-07-14 16:26:38,245 [INFO] ✓ Scraped and saved acura/nsx/2017
+2025-07-14 16:26:46,497 [INFO] ✓ Scraped and saved acura/rdx/2017
+2025-07-14 16:26:58,581 [INFO] ✓ Scraped and saved acura/rlx/2017
+2025-07-14 16:27:10,373 [INFO] ✓ Scraped and saved acura/rlx/2018
+2025-07-14 16:27:11,530 [INFO] ✓ Scraped and saved acura/tlx/2017
+2025-07-14 16:27:12,531 [INFO] 🏁 Marked ACURA 2017 as complete.
+2025-07-14 16:27:12,569 [INFO] Worker starting on ACURA/2016 using proxy http://207.244.217.165:6712
+2025-07-14 16:27:12,951 [INFO] Discovering models for ACURA 2016...
+2025-07-14 16:27:19,417 [INFO] Found 7 models for ACURA 2016.
+2025-07-14 16:27:22,426 [INFO] ✓ Scraped and saved acura/tlx/2018
+2025-07-14 16:27:28,605 [WARNING] ✗ No US market data found for acura/cdx/2016
+2025-07-14 16:27:35,063 [WARNING] ✗ No US market data found for acura/tlx-l/2018
+2025-07-14 16:27:35,997 [INFO] ✓ Scraped and saved acura/ilx/2016
+2025-07-14 16:27:36,065 [INFO] 🏁 Marked ACURA 2018 as complete.
+2025-07-14 16:27:36,102 [INFO] Worker starting on ACURA/2015 using proxy http://107.172.163.27:6543
+2025-07-14 16:27:36,451 [INFO] Discovering models for ACURA 2015...
+2025-07-14 16:27:43,314 [INFO] ✓ Scraped and saved acura/mdx/2016
+2025-07-14 16:27:55,854 [INFO] ✓ Scraped and saved acura/nsx/2016
+2025-07-14 16:28:05,926 [INFO] ✓ Scraped and saved acura/rdx/2016
+2025-07-14 16:28:08,465 [ERROR] Critical timeout discovering models for acura 2015. Skipping.
+2025-07-14 16:28:08,505 [INFO] Worker starting on ACURA/2014 using proxy http://216.10.27.159:6837
+2025-07-14 16:28:09,002 [INFO] Discovering models for ACURA 2014...
+2025-07-14 16:28:12,803 [INFO] ✓ Scraped and saved acura/rlx/2016
+2025-07-14 16:28:18,075 [INFO] Found 7 models for ACURA 2014.
+2025-07-14 16:28:19,898 [INFO] ✓ Scraped and saved acura/tlx/2016
+2025-07-14 16:28:20,901 [INFO] 🏁 Marked ACURA 2016 as complete.
+2025-07-14 16:28:20,954 [INFO] Worker starting on ACURA/2013 using proxy http://136.0.207.84:6661
+2025-07-14 16:28:21,303 [INFO] Discovering models for ACURA 2013...
+2025-07-14 16:28:29,574 [INFO] ✓ Scraped and saved acura/ilx/2014
+2025-07-14 16:28:32,869 [INFO] Found 8 models for ACURA 2013.
+2025-07-14 16:28:38,916 [INFO] ✓ Scraped and saved acura/mdx/2014
+2025-07-14 16:28:47,744 [INFO] ✓ Scraped and saved acura/rdx/2014
+2025-07-14 16:28:47,891 [INFO] ✓ Scraped and saved acura/ilx/2013
+2025-07-14 16:28:56,995 [INFO] ✓ Scraped and saved acura/rlx/2014
+2025-07-14 16:29:05,788 [INFO] ✓ Scraped and saved acura/mdx/2013
+2025-07-14 16:29:08,284 [INFO] ✓ Scraped and saved acura/tl/2014
+2025-07-14 16:29:18,409 [INFO] ✓ Scraped and saved acura/tlx/2014
+2025-07-14 16:29:20,323 [INFO] ✓ Scraped and saved acura/rdx/2013
+2025-07-14 16:29:27,669 [INFO] ✓ Scraped and saved acura/tsx/2014
+2025-07-14 16:29:28,672 [INFO] 🏁 Marked ACURA 2014 as complete.
+2025-07-14 16:29:28,729 [INFO] Worker starting on ACURA/2012 using proxy http://142.147.128.93:6593
+2025-07-14 16:29:29,102 [INFO] Discovering models for ACURA 2012...
+2025-07-14 16:29:35,525 [INFO] Found 7 models for ACURA 2012.
+2025-07-14 16:29:43,673 [INFO] ✓ Scraped and saved acura/ilx/2012
+2025-07-14 16:29:51,333 [WARNING] Timeout for https://www.wheel-size.com/size/acura/rl/2013/. Attempt 1/5. Retrying in 30s...
+2025-07-14 16:29:51,614 [INFO] ✓ Scraped and saved acura/mdx/2012
+2025-07-14 16:29:58,033 [INFO] ✓ Scraped and saved acura/rdx/2012
+2025-07-14 16:30:05,212 [INFO] ✓ Scraped and saved acura/rl/2012
+2025-07-14 16:30:11,588 [INFO] ✓ Scraped and saved acura/tl/2012
+2025-07-14 16:30:19,047 [INFO] ✓ Scraped and saved acura/tsx/2012
+2025-07-14 16:30:25,664 [INFO] ✓ Scraped and saved acura/zdx/2012
+2025-07-14 16:30:26,666 [INFO] 🏁 Marked ACURA 2012 as complete.
+2025-07-14 16:30:26,750 [INFO] Worker starting on ACURA/2011 using proxy http://206.41.172.74:6634
+2025-07-14 16:30:27,381 [INFO] Discovering models for ACURA 2011...
+2025-07-14 16:30:34,633 [INFO] Found 7 models for ACURA 2011.
+2025-07-14 16:30:44,883 [INFO] ✓ Scraped and saved acura/csx/2011
+2025-07-14 16:30:51,346 [WARNING] Timeout for https://www.wheel-size.com/size/acura/rl/2013/. Attempt 2/5. Retrying in 60s...
+2025-07-14 16:30:52,165 [INFO] ✓ Scraped and saved acura/mdx/2011
+2025-07-14 16:31:00,461 [INFO] ✓ Scraped and saved acura/rdx/2011
+2025-07-14 16:31:27,071 [INFO] ✓ Scraped and saved acura/rl/2011
+2025-07-14 16:31:34,516 [INFO] ✓ Scraped and saved acura/tl/2011
+2025-07-14 16:31:41,721 [INFO] ✓ Scraped and saved acura/tsx/2011
+2025-07-14 16:31:48,309 [INFO] ✓ Scraped and saved acura/zdx/2011
+2025-07-14 16:31:49,312 [INFO] 🏁 Marked ACURA 2011 as complete.
+2025-07-14 16:31:49,368 [INFO] Worker starting on ACURA/2010 using proxy http://38.154.227.167:5868
+2025-07-14 16:31:49,761 [INFO] Discovering models for ACURA 2010...
+2025-07-14 16:32:21,360 [WARNING] Timeout for https://www.wheel-size.com/size/acura/rl/2013/. Attempt 3/5. Retrying in 120s...
+2025-07-14 16:32:22,024 [ERROR] Critical timeout discovering models for acura 2010. Skipping.
+2025-07-14 16:32:22,061 [INFO] Worker starting on ACURA/2009 using proxy http://92.113.242.158:6742
+2025-07-14 16:32:22,420 [INFO] Discovering models for ACURA 2009...
+2025-07-14 16:32:29,550 [INFO] Found 7 models for ACURA 2009.
+2025-07-14 16:32:34,712 [INFO] ✓ Scraped and saved acura/csx/2009
+2025-07-14 16:32:40,402 [INFO] ✓ Scraped and saved acura/mdx/2009
+2025-07-14 16:32:46,215 [INFO] ✓ Scraped and saved acura/rdx/2009
+2025-07-14 16:32:51,682 [INFO] ✓ Scraped and saved acura/rl/2009
+2025-07-14 16:32:57,104 [INFO] ✓ Scraped and saved acura/tl/2009
+2025-07-14 16:33:02,889 [INFO] ✓ Scraped and saved acura/tsx/2009
+2025-07-14 16:33:08,552 [INFO] ✓ Scraped and saved acura/zdx/2009
+2025-07-14 16:33:09,555 [INFO] 🏁 Marked ACURA 2009 as complete.
+2025-07-14 16:33:09,595 [INFO] Worker starting on ACURA/2008 using proxy http://23.95.150.145:6114
+2025-07-14 16:33:09,960 [INFO] Discovering models for ACURA 2008...
+2025-07-14 16:33:16,829 [INFO] Found 6 models for ACURA 2008.
+2025-07-14 16:33:46,834 [WARNING] Timeout for https://www.wheel-size.com/size/acura/csx/2008/. Attempt 1/5. Retrying in 30s...
+2025-07-14 16:34:46,849 [WARNING] Timeout for https://www.wheel-size.com/size/acura/csx/2008/. Attempt 2/5. Retrying in 60s...
+2025-07-14 16:34:51,373 [WARNING] Timeout for https://www.wheel-size.com/size/acura/rl/2013/. Attempt 4/5. Retrying in 240s...
+2025-07-14 16:34:59,341 [WARNING] 
+--- Scraper Interrupted by User ---
+2025-07-14 16:34:59,400 [ERROR] Task was destroyed but it is pending!
+task: <Task cancelling name='Task-2' coro=<process_make_year() running at /Users/ahsanriaz/Developer/tiresize-scraper/main.py:259> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[gather.<locals>._done_callback() at /opt/anaconda3/lib/python3.13/asyncio/tasks.py:820, ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228]>
+2025-07-14 16:34:59,401 [ERROR] Task was destroyed but it is pending!
+task: <Task cancelling name='Task-3' coro=<process_make_year() running at /Users/ahsanriaz/Developer/tiresize-scraper/main.py:259> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[gather.<locals>._done_callback() at /opt/anaconda3/lib/python3.13/asyncio/tasks.py:820, ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228]>
+2025-07-14 18:14:04,906 [INFO] --- Starting Scraper with 1 workers ---
+2025-07-14 18:14:04,913 [INFO] Found 1326 total potential tasks.
+2025-07-14 18:14:04,914 [INFO] Skipping 13 already completed tasks.
+2025-07-14 18:14:04,914 [INFO] Queuing 1313 tasks to be processed.
+2025-07-14 18:14:05,809 [INFO] Discovering models for ACURA 2024...
+2025-07-14 18:14:39,121 [ERROR] Critical timeout discovering models for acura 2024. Skipping.
+2025-07-14 18:14:39,523 [INFO] Discovering models for ACURA 2015...
+2025-07-14 18:14:48,582 [INFO] Found 5 models for ACURA 2015.
+2025-07-14 18:14:59,637 [INFO] ✓ Scraped and saved acura/ilx/2015
+2025-07-14 18:15:07,142 [INFO] ✓ Scraped and saved acura/mdx/2015
+2025-07-14 18:15:15,562 [INFO] ✓ Scraped and saved acura/rdx/2015
+2025-07-14 18:15:21,974 [INFO] ✓ Scraped and saved acura/rlx/2015
+2025-07-14 18:15:27,652 [INFO] ✓ Scraped and saved acura/tlx/2015
+2025-07-14 18:15:28,654 [INFO] 🏁 Marked ACURA 2015 as complete.
+2025-07-14 18:15:29,066 [INFO] Discovering models for ACURA 2013...
+2025-07-14 18:15:33,893 [INFO] Found 8 models for ACURA 2013.
+2025-07-14 18:15:33,893 [INFO] ⏭️  Skipping existing file: acura/2013/acura__ilx__2013.json
+2025-07-14 18:15:33,893 [INFO] ⏭️  Skipping existing file: acura/2013/acura__mdx__2013.json
+2025-07-14 18:15:33,893 [INFO] ⏭️  Skipping existing file: acura/2013/acura__rdx__2013.json
+2025-07-14 18:15:41,441 [INFO] ✓ Scraped and saved acura/rl/2013
+2025-07-14 18:15:49,155 [INFO] ✓ Scraped and saved acura/rlx/2013
+2025-07-14 18:15:55,966 [INFO] ✓ Scraped and saved acura/tl/2013
+2025-07-14 18:16:05,709 [INFO] ✓ Scraped and saved acura/tsx/2013
+2025-07-14 18:16:12,400 [INFO] ✓ Scraped and saved acura/zdx/2013
+2025-07-14 18:16:13,402 [INFO] 🏁 Marked ACURA 2013 as complete.
+2025-07-14 18:16:13,816 [INFO] Discovering models for ACURA 2010...
+2025-07-14 18:16:17,659 [INFO] Found 7 models for ACURA 2010.
+2025-07-14 18:16:26,388 [INFO] ✓ Scraped and saved acura/csx/2010
+2025-07-14 18:16:35,106 [INFO] ✓ Scraped and saved acura/mdx/2010
+2025-07-14 18:16:41,411 [INFO] ✓ Scraped and saved acura/rdx/2010
+2025-07-14 18:16:47,913 [INFO] ✓ Scraped and saved acura/rl/2010
+2025-07-14 18:16:53,729 [INFO] ✓ Scraped and saved acura/tl/2010
+2025-07-14 18:17:01,295 [INFO] ✓ Scraped and saved acura/tsx/2010
+2025-07-14 18:17:07,378 [INFO] ✓ Scraped and saved acura/zdx/2010
+2025-07-14 18:17:08,380 [INFO] 🏁 Marked ACURA 2010 as complete.
+2025-07-14 18:17:08,798 [INFO] Discovering models for ACURA 2008...
+2025-07-14 18:17:14,795 [INFO] Found 6 models for ACURA 2008.
+2025-07-14 18:17:23,182 [INFO] ✓ Scraped and saved acura/csx/2008
+2025-07-14 18:17:29,698 [INFO] ✓ Scraped and saved acura/mdx/2008
+2025-07-14 18:17:35,569 [INFO] ✓ Scraped and saved acura/rdx/2008
+2025-07-14 18:17:41,499 [INFO] ✓ Scraped and saved acura/rl/2008
+2025-07-14 18:17:47,753 [INFO] ✓ Scraped and saved acura/tl/2008
+2025-07-14 18:18:15,080 [WARNING] Timeout for https://www.wheel-size.com/size/acura/tsx/2008/. Attempt 1/5. Retrying in 30s...
+2025-07-14 18:19:07,868 [WARNING] Timeout for https://www.wheel-size.com/size/acura/tsx/2008/. Attempt 2/5. Retrying in 60s...
+2025-07-14 18:20:02,888 [WARNING] 
+--- Scraper Interrupted by User ---
+2025-07-14 18:20:02,931 [ERROR] Task was destroyed but it is pending!
+task: <Task cancelling name='Task-2' coro=<process_make_year() running at /Users/ahsanriaz/Developer/tiresize-scraper/main.py:236> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[gather.<locals>._done_callback() at /opt/anaconda3/lib/python3.13/asyncio/tasks.py:820, ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228]>
+2025-07-14 18:37:42,026 [INFO] Starting comprehensive vehicle data scraping with stealth mode...
+2025-07-14 18:37:42,027 [INFO] Target makes: 55
+2025-07-14 18:37:42,027 [INFO] Target years: 2000-2026
+2025-07-14 18:37:42,756 [INFO] 
+============================================================
+2025-07-14 18:37:42,756 [INFO] Processing: TOYOTA 2005
+2025-07-14 18:37:42,756 [INFO] ============================================================
+2025-07-14 18:37:43,424 [INFO] Created stealth page with User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb...
+2025-07-14 18:37:43,424 [INFO] 🔄 Created new stealth session
+2025-07-14 18:37:43,424 [INFO] Getting models for toyota 2005 (attempt 1/3)
+2025-07-14 18:37:57,723 [INFO]   Selecting make: toyota
+2025-07-14 18:38:00,087 [INFO]   Selecting year: 2005
+2025-07-14 18:38:02,845 [INFO]   Found 95 models for toyota 2005
+2025-07-14 18:38:02,846 [INFO]     Models: 4runner, allex, allion, alphard, altezza...
+2025-07-14 18:38:06,100 [INFO] Scraping: https://www.wheel-size.com/size/toyota/4runner/2005/ (attempt 1/5)
+2025-07-14 18:38:18,999 [INFO] ✓ Successfully scraped toyota 4runner 2005 - 2 trim(s)
+2025-07-14 18:38:19,000 [INFO] 💾 Saved to: results/toyota__4runner__2005.json
+2025-07-14 18:38:25,775 [INFO] Scraping: https://www.wheel-size.com/size/toyota/allex/2005/ (attempt 1/5)
+2025-07-14 18:38:35,805 [WARNING] ✗ No data found for toyota allex 2005
+2025-07-14 18:38:42,981 [INFO] Scraping: https://www.wheel-size.com/size/toyota/allion/2005/ (attempt 1/5)
+2025-07-14 18:38:53,628 [WARNING] ✗ No data found for toyota allion 2005
+2025-07-14 18:38:59,936 [INFO] Scraping: https://www.wheel-size.com/size/toyota/alphard/2005/ (attempt 1/5)
+2025-07-14 18:39:13,765 [WARNING] ✗ No data found for toyota alphard 2005
+2025-07-14 18:39:20,209 [INFO] Scraping: https://www.wheel-size.com/size/toyota/altezza/2005/ (attempt 1/5)
+2025-07-14 18:39:29,616 [WARNING] ✗ No data found for toyota altezza 2005
+2025-07-14 18:39:33,596 [INFO] Scraping: https://www.wheel-size.com/size/toyota/altezza-gita/2005/ (attempt 1/5)
+2025-07-14 18:39:39,791 [INFO] 
+
+⚠️  Scraping interrupted by user
+2025-07-14 18:39:41,814 [ERROR] Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-07-14 18:39:41,814 [ERROR] Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-07-14 19:03:01,391 [INFO] --- Starting Enhanced Anti-Detection Scraper with 4 workers ---
+2025-07-14 19:03:01,398 [INFO] Found 1326 total potential tasks.
+2025-07-14 19:03:01,398 [INFO] Skipping 16 already completed tasks.
+2025-07-14 19:03:01,398 [INFO] Queuing 1310 tasks to be processed.
+2025-07-14 19:03:04,190 [INFO] Discovering models for ACURA 2024...
+2025-07-14 19:03:04,870 [INFO] Discovering models for ACURA 2006...
+2025-07-14 19:03:05,157 [INFO] Discovering models for ACURA 2007...
+2025-07-14 19:03:05,242 [INFO] Discovering models for ACURA 2008...
+2025-07-14 19:03:22,668 [INFO] Found 7 models for ACURA 2006.
+2025-07-14 19:03:28,150 [WARNING] Detection detected on https://www.wheel-size.com/size/acura/csx/2006/, attempt 1
+2025-07-14 19:03:35,333 [INFO] Found 6 models for ACURA 2024.
+2025-07-14 19:03:35,334 [INFO] ⏭️  Skipping existing file: acura/2024/acura__integra__2024.json
+2025-07-14 19:03:37,230 [INFO] Found 6 models for ACURA 2007.
+2025-07-14 19:03:38,293 [INFO] Found 6 models for ACURA 2008.
+2025-07-14 19:03:38,293 [INFO] ⏭️  Skipping existing file: acura/2008/acura__csx__2008.json
+2025-07-14 19:03:38,293 [INFO] ⏭️  Skipping existing file: acura/2008/acura__mdx__2008.json
+2025-07-14 19:03:38,293 [INFO] ⏭️  Skipping existing file: acura/2008/acura__rdx__2008.json
+2025-07-14 19:03:38,293 [INFO] ⏭️  Skipping existing file: acura/2008/acura__rl__2008.json
+2025-07-14 19:03:38,293 [INFO] ⏭️  Skipping existing file: acura/2008/acura__tl__2008.json
+2025-07-14 19:03:41,335 [WARNING] Detection detected on https://www.wheel-size.com/size/acura/integra-type-s/2024/, attempt 1
+2025-07-14 19:03:42,945 [WARNING] Detection detected on https://www.wheel-size.com/size/acura/csx/2007/, attempt 1
+2025-07-14 19:03:44,454 [WARNING] Detection detected on https://www.wheel-size.com/size/acura/tsx/2008/, attempt 1
+2025-07-14 19:04:03,676 [WARNING] Detection detected on https://www.wheel-size.com/size/acura/csx/2006/, attempt 2
+2025-07-14 19:04:17,485 [WARNING] Detection detected on https://www.wheel-size.com/size/acura/integra-type-s/2024/, attempt 2
+2025-07-14 19:04:19,347 [WARNING] Detection detected on https://www.wheel-size.com/size/acura/tsx/2008/, attempt 2
+2025-07-14 19:04:20,815 [WARNING] Detection detected on https://www.wheel-size.com/size/acura/csx/2007/, attempt 2
+2025-07-14 19:05:01,457 [WARNING] 
+--- Scraper Interrupted by User ---
+2025-07-14 19:05:01,485 [ERROR] Task was destroyed but it is pending!
+task: <Task cancelling name='Task-2' coro=<process_make_year() running at /Users/ahsanriaz/Developer/tiresize-scraper/main.py:558> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[gather.<locals>._done_callback() at /opt/anaconda3/lib/python3.13/asyncio/tasks.py:820, ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228]>
+2025-07-14 19:05:01,486 [ERROR] Task was destroyed but it is pending!
+task: <Task cancelling name='Task-3' coro=<process_make_year() running at /Users/ahsanriaz/Developer/tiresize-scraper/main.py:558> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[gather.<locals>._done_callback() at /opt/anaconda3/lib/python3.13/asyncio/tasks.py:820, ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228]>
+2025-07-14 19:05:01,486 [ERROR] Task was destroyed but it is pending!
+task: <Task cancelling name='Task-4' coro=<process_make_year() running at /Users/ahsanriaz/Developer/tiresize-scraper/main.py:558> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[gather.<locals>._done_callback() at /opt/anaconda3/lib/python3.13/asyncio/tasks.py:820, ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228]>
+2025-07-14 19:05:01,486 [ERROR] Task was destroyed but it is pending!
+task: <Task cancelling name='Task-5' coro=<process_make_year() running at /Users/ahsanriaz/Developer/tiresize-scraper/main.py:558> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[gather.<locals>._done_callback() at /opt/anaconda3/lib/python3.13/asyncio/tasks.py:820, ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228]>
+2025-07-14 19:05:26,232 [INFO] --- Starting Enhanced Anti-Detection Scraper with 4 workers ---
+2025-07-14 19:05:26,239 [INFO] Found 1326 total potential tasks.
+2025-07-14 19:05:26,239 [INFO] Skipping 16 already completed tasks.
+2025-07-14 19:05:26,239 [INFO] Queuing 1310 tasks to be processed.
+2025-07-14 19:05:28,382 [INFO] Discovering models for ACURA 2008...
+2025-07-14 19:05:28,864 [INFO] Discovering models for ACURA 2006...
+2025-07-14 19:05:29,673 [INFO] Discovering models for ACURA 2024...
+2025-07-14 19:05:29,982 [INFO] Discovering models for ACURA 2007...
+2025-07-14 19:05:43,632 [INFO] Found 7 models for ACURA 2006.
+2025-07-14 19:05:44,853 [INFO] Found 6 models for ACURA 2024.
+2025-07-14 19:05:44,854 [INFO] ⏭️  Skipping existing file: acura/2024/acura__integra__2024.json
+2025-07-14 19:05:45,119 [INFO] Found 6 models for ACURA 2007.
+2025-07-14 19:05:50,171 [INFO] Found 6 models for ACURA 2008.
+2025-07-14 19:05:50,172 [INFO] ⏭️  Skipping existing file: acura/2008/acura__csx__2008.json
+2025-07-14 19:05:50,172 [INFO] ⏭️  Skipping existing file: acura/2008/acura__mdx__2008.json
+2025-07-14 19:05:50,172 [INFO] ⏭️  Skipping existing file: acura/2008/acura__rdx__2008.json
+2025-07-14 19:05:50,172 [INFO] ⏭️  Skipping existing file: acura/2008/acura__rl__2008.json
+2025-07-14 19:05:50,172 [INFO] ⏭️  Skipping existing file: acura/2008/acura__tl__2008.json
+2025-07-14 19:05:54,695 [INFO] ✓ Scraped and saved acura/csx/2007
+2025-07-14 19:05:56,682 [INFO] ✓ Scraped and saved acura/integra-type-s/2024
+2025-07-14 19:05:56,822 [INFO] ✓ Scraped and saved acura/csx/2006
+2025-07-14 19:05:57,639 [INFO] ✓ Scraped and saved acura/tsx/2008
+2025-07-14 19:05:59,196 [INFO] 🏁 Marked ACURA 2008 as complete.
+2025-07-14 19:05:59,381 [INFO] ⏭️  Skipping existing file: acura/2024/acura__mdx__2024.json
+2025-07-14 19:05:59,382 [INFO] ⏭️  Skipping existing file: acura/2024/acura__rdx__2024.json
+2025-07-14 19:05:59,382 [INFO] ⏭️  Skipping existing file: acura/2024/acura__tlx__2024.json
+2025-07-14 19:05:59,382 [INFO] ⏭️  Skipping existing file: acura/2024/acura__zdx__2024.json
+2025-07-14 19:05:59,382 [INFO] 🏁 Marked ACURA 2024 as complete.
+2025-07-14 19:06:01,824 [INFO] Discovering models for ACURA 2004...
+2025-07-14 19:06:02,143 [INFO] Discovering models for ACURA 2005...
+2025-07-14 19:06:04,521 [INFO] ✓ Scraped and saved acura/mdx/2007
+2025-07-14 19:06:05,145 [INFO] ✓ Scraped and saved acura/mdx/2006
+2025-07-14 19:06:12,359 [INFO] ✓ Scraped and saved acura/rdx/2006
+2025-07-14 19:06:12,597 [INFO] Found 7 models for ACURA 2004.
+2025-07-14 19:06:13,402 [INFO] ✓ Scraped and saved acura/rdx/2007
+2025-07-14 19:06:13,446 [INFO] Found 8 models for ACURA 2005.
+2025-07-14 19:06:19,574 [INFO] ✓ Scraped and saved acura/el/2004
+2025-07-14 19:06:21,483 [INFO] ✓ Scraped and saved acura/rl/2006
+2025-07-14 19:06:21,953 [INFO] ✓ Scraped and saved acura/csx/2005
+2025-07-14 19:06:22,621 [INFO] ✓ Scraped and saved acura/rl/2007
+2025-07-14 19:06:31,152 [INFO] ✓ Scraped and saved acura/tl/2007
+2025-07-14 19:06:31,762 [INFO] ✓ Scraped and saved acura/el/2005
+2025-07-14 19:06:32,946 [INFO] ✓ Scraped and saved acura/rsx/2006
+2025-07-14 19:06:33,563 [INFO] ✓ Scraped and saved acura/mdx/2004
+2025-07-14 19:06:40,737 [INFO] ✓ Scraped and saved acura/mdx/2005
+2025-07-14 19:06:40,918 [INFO] ✓ Scraped and saved acura/tl/2006
+2025-07-14 19:06:41,567 [INFO] ✓ Scraped and saved acura/tsx/2007
+2025-07-14 19:06:41,723 [INFO] ✓ Scraped and saved acura/nsx/2004
+2025-07-14 19:06:43,734 [INFO] 🏁 Marked ACURA 2007 as complete.
+2025-07-14 19:06:46,917 [INFO] Discovering models for ACURA 2003...
+2025-07-14 19:07:10,616 [WARNING] Timeout for https://www.wheel-size.com/size/acura/rl/2004/. Attempt 1/5. Retrying in 30s...
+2025-07-14 19:07:10,616 [WARNING] Timeout for https://www.wheel-size.com/size/acura/nsx/2005/. Attempt 1/5. Retrying in 30s...
+2025-07-14 19:07:12,057 [WARNING] Timeout for https://www.wheel-size.com/size/acura/tsx/2006/. Attempt 1/5. Retrying in 30s...
+2025-07-14 19:07:13,702 [INFO] Found 9 models for ACURA 2003.
+2025-07-14 19:07:38,455 [WARNING] Timeout for https://www.wheel-size.com/size/acura/cl/2003/. Attempt 1/5. Retrying in 30s...
+2025-07-14 19:08:02,926 [WARNING] Timeout for https://www.wheel-size.com/size/acura/rl/2004/. Attempt 2/5. Retrying in 60s...
+2025-07-14 19:08:04,246 [WARNING] Timeout for https://www.wheel-size.com/size/acura/nsx/2005/. Attempt 2/5. Retrying in 60s...
+2025-07-14 19:08:04,554 [WARNING] Timeout for https://www.wheel-size.com/size/acura/tsx/2006/. Attempt 2/5. Retrying in 60s...
+2025-07-14 19:08:07,186 [WARNING] 
+--- Scraper Interrupted by User ---
+2025-07-14 19:08:07,227 [ERROR] Task was destroyed but it is pending!
+task: <Task cancelling name='Task-2' coro=<process_make_year() running at /Users/ahsanriaz/Developer/tiresize-scraper/main.py:558> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[gather.<locals>._done_callback() at /opt/anaconda3/lib/python3.13/asyncio/tasks.py:820, ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228]>
+2025-07-14 19:08:07,227 [ERROR] Task was destroyed but it is pending!
+task: <Task cancelling name='Task-3' coro=<process_make_year() running at /Users/ahsanriaz/Developer/tiresize-scraper/main.py:558> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[gather.<locals>._done_callback() at /opt/anaconda3/lib/python3.13/asyncio/tasks.py:820, ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228]>
+2025-07-14 19:08:07,227 [ERROR] Task was destroyed but it is pending!
+task: <Task cancelling name='Task-4' coro=<process_make_year() running at /Users/ahsanriaz/Developer/tiresize-scraper/main.py:558> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[gather.<locals>._done_callback() at /opt/anaconda3/lib/python3.13/asyncio/tasks.py:820, ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228]>
+2025-07-14 19:08:07,227 [ERROR] Task was destroyed but it is pending!
+task: <Task cancelling name='Task-5' coro=<process_make_year() running at /Users/ahsanriaz/Developer/tiresize-scraper/main.py:558> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[gather.<locals>._done_callback() at /opt/anaconda3/lib/python3.13/asyncio/tasks.py:820, ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228]>
+2025-07-14 19:08:19,730 [INFO] --- Starting Enhanced Anti-Detection Scraper with 1 workers ---
+2025-07-14 19:08:19,737 [INFO] Found 1326 total potential tasks.
+2025-07-14 19:08:19,737 [INFO] Skipping 19 already completed tasks.
+2025-07-14 19:08:19,737 [INFO] Queuing 1307 tasks to be processed.
+2025-07-14 19:08:22,222 [INFO] Discovering models for ACURA 2006...
+2025-07-14 19:08:32,188 [INFO] Found 7 models for ACURA 2006.
+2025-07-14 19:08:32,189 [INFO] ⏭️  Skipping existing file: acura/2006/acura__csx__2006.json
+2025-07-14 19:08:32,189 [INFO] ⏭️  Skipping existing file: acura/2006/acura__mdx__2006.json
+2025-07-14 19:08:32,189 [INFO] ⏭️  Skipping existing file: acura/2006/acura__rdx__2006.json
+2025-07-14 19:08:32,189 [INFO] ⏭️  Skipping existing file: acura/2006/acura__rl__2006.json
+2025-07-14 19:08:32,189 [INFO] ⏭️  Skipping existing file: acura/2006/acura__rsx__2006.json
+2025-07-14 19:08:32,189 [INFO] ⏭️  Skipping existing file: acura/2006/acura__tl__2006.json
+2025-07-14 19:08:57,601 [WARNING] Timeout for https://www.wheel-size.com/size/acura/tsx/2006/. Attempt 1/5. Retrying in 30s...
+2025-07-14 19:09:41,580 [WARNING] 
+--- Scraper Interrupted by User ---
+2025-07-14 19:09:41,592 [ERROR] Task was destroyed but it is pending!
+task: <Task cancelling name='Task-2' coro=<process_make_year() running at /Users/ahsanriaz/Developer/tiresize-scraper/main.py:558> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228, <1 more>, ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228]>
+2025-07-14 19:10:01,988 [INFO] --- Starting Enhanced Anti-Detection Scraper with 1 workers ---
+2025-07-14 19:10:01,995 [INFO] Found 1326 total potential tasks.
+2025-07-14 19:10:01,995 [INFO] Skipping 19 already completed tasks.
+2025-07-14 19:10:01,995 [INFO] Queuing 1307 tasks to be processed.
+2025-07-14 19:10:05,692 [INFO] Discovering models for ACURA 2006...
+2025-07-14 19:10:46,024 [ERROR] Critical timeout discovering models for acura 2006. Skipping.
+2025-07-14 19:10:48,948 [INFO] Discovering models for ACURA 2005...
+2025-07-14 19:11:37,783 [ERROR] Critical timeout discovering models for acura 2005. Skipping.
+2025-07-14 19:11:41,059 [INFO] Discovering models for ACURA 2004...
+2025-07-14 19:12:03,869 [WARNING] 
+--- Scraper Interrupted by User ---
+2025-07-14 19:12:03,884 [ERROR] Task was destroyed but it is pending!
+task: <Task cancelling name='Task-2' coro=<process_make_year() running at /Users/ahsanriaz/Developer/tiresize-scraper/main.py:558> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228, <1 more>, ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228]>
+2025-07-14 19:49:12,041 [INFO] --- Starting Enhanced Anti-Detection Scraper with 1 workers and 10 proxies ---
+2025-07-14 19:49:12,049 [INFO] Found 1326 total potential tasks.
+2025-07-14 19:49:12,049 [INFO] Skipping 19 already completed tasks.
+2025-07-14 19:49:12,049 [INFO] Queuing 1307 tasks to be processed.
+2025-07-14 19:49:16,759 [INFO] Discovering models for ACURA 2006 using proxy 38.154.227.167:5868...
+2025-07-14 19:49:17,122 [WARNING] Failed to get models for acura 2006 with proxy 38.154.227.167:5868: Page.goto: net::ERR_CONNECTION_RESET at https://www.wheel-size.com/
+Call log:
+  - navigating to "https://www.wheel-size.com/", waiting until "domcontentloaded"
+
+2025-07-14 19:49:17,122 [WARNING] Proxy 38.154.227.167:5868 failed. On cooldown until 2025-07-14 19:59:17.122600
+2025-07-14 19:49:38,353 [WARNING] 
+--- Scraper Interrupted by User ---
+2025-07-14 19:49:38,371 [ERROR] Task was destroyed but it is pending!
+task: <Task cancelling name='Task-2' coro=<process_make_year() running at /Users/ahsanriaz/Developer/tiresize-scraper/main.py:665> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[gather.<locals>._done_callback() at /opt/anaconda3/lib/python3.13/asyncio/tasks.py:820, ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228]>
+2025-07-14 19:49:39,610 [INFO] --- Starting Enhanced Anti-Detection Scraper with 1 workers and 10 proxies ---
+2025-07-14 19:49:39,617 [INFO] Found 1326 total potential tasks.
+2025-07-14 19:49:39,617 [INFO] Skipping 19 already completed tasks.
+2025-07-14 19:49:39,617 [INFO] Queuing 1307 tasks to be processed.
+2025-07-14 19:49:44,087 [INFO] Discovering models for ACURA 2006 using proxy 38.154.227.167:5868...
+2025-07-14 19:49:44,404 [WARNING] Failed to get models for acura 2006 with proxy 38.154.227.167:5868: Page.goto: net::ERR_CONNECTION_RESET at https://www.wheel-size.com/
+Call log:
+  - navigating to "https://www.wheel-size.com/", waiting until "domcontentloaded"
+
+2025-07-14 19:49:44,404 [WARNING] Proxy 38.154.227.167:5868 failed. On cooldown until 2025-07-14 19:59:44.404870
+2025-07-14 19:50:11,725 [WARNING] 
+--- Scraper Interrupted by User ---
+2025-07-14 19:50:11,731 [ERROR] Task was destroyed but it is pending!
+task: <Task cancelling name='Task-2' coro=<process_make_year() running at /Users/ahsanriaz/Developer/tiresize-scraper/main.py:665> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[gather.<locals>._done_callback() at /opt/anaconda3/lib/python3.13/asyncio/tasks.py:820, ProtocolCallback.__init__.<locals>.cb() at /opt/anaconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py:228]>
+2025-07-14 19:50:26,578 [INFO] --- Starting Enhanced Anti-Detection Scraper with 1 workers ---
+2025-07-14 19:50:26,584 [INFO] Found 1326 total potential tasks.
+2025-07-14 19:50:26,585 [INFO] Skipping 19 already completed tasks.
+2025-07-14 19:50:26,585 [INFO] Queuing 1307 tasks to be processed.
+2025-07-14 19:50:29,455 [INFO] Discovering models for ACURA 2006...
+2025-07-14 19:50:40,570 [INFO] Found 7 models for ACURA 2006.
+2025-07-14 19:50:40,570 [INFO] ⏭️  Skipping existing file: acura/2006/acura__csx__2006.json
+2025-07-14 19:50:40,570 [INFO] ⏭️  Skipping existing file: acura/2006/acura__mdx__2006.json
+2025-07-14 19:50:40,570 [INFO] ⏭️  Skipping existing file: acura/2006/acura__rdx__2006.json
+2025-07-14 19:50:40,571 [INFO] ⏭️  Skipping existing file: acura/2006/acura__rl__2006.json
+2025-07-14 19:50:40,571 [INFO] ⏭️  Skipping existing file: acura/2006/acura__rsx__2006.json
+2025-07-14 19:50:40,571 [INFO] ⏭️  Skipping existing file: acura/2006/acura__tl__2006.json
+2025-07-14 19:50:49,770 [INFO] ✓ Scraped and saved acura/tsx/2006
+2025-07-14 19:50:52,673 [INFO] 🏁 Marked ACURA 2006 as complete.
+2025-07-14 19:50:55,670 [INFO] Discovering models for ACURA 2005...
+2025-07-14 19:51:08,173 [INFO] Found 8 models for ACURA 2005.
+2025-07-14 19:51:08,174 [INFO] ⏭️  Skipping existing file: acura/2005/acura__csx__2005.json
+2025-07-14 19:51:08,174 [INFO] ⏭️  Skipping existing file: acura/2005/acura__el__2005.json
+2025-07-14 19:51:08,174 [INFO] ⏭️  Skipping existing file: acura/2005/acura__mdx__2005.json
+2025-07-14 19:51:14,746 [INFO] ✓ Scraped and saved acura/nsx/2005
+2025-07-14 19:51:24,409 [INFO] ✓ Scraped and saved acura/rl/2005
+2025-07-14 19:51:36,547 [INFO] ✓ Scraped and saved acura/rsx/2005
+2025-07-14 19:51:45,658 [INFO] ✓ Scraped and saved acura/tl/2005
+2025-07-14 19:51:55,591 [INFO] ✓ Scraped and saved acura/tsx/2005
+2025-07-14 19:51:56,965 [INFO] 🏁 Marked ACURA 2005 as complete.
+2025-07-14 19:51:58,888 [INFO] Discovering models for ACURA 2004...
+2025-07-14 19:52:08,057 [INFO] Found 7 models for ACURA 2004.
+2025-07-14 19:52:08,058 [INFO] ⏭️  Skipping existing file: acura/2004/acura__el__2004.json
+2025-07-14 19:52:08,059 [INFO] ⏭️  Skipping existing file: acura/2004/acura__mdx__2004.json
+2025-07-14 19:52:08,059 [INFO] ⏭️  Skipping existing file: acura/2004/acura__nsx__2004.json
+2025-07-14 19:52:18,799 [INFO] ✓ Scraped and saved acura/rl/2004
+2025-07-14 19:52:29,301 [INFO] ✓ Scraped and saved acura/rsx/2004
+2025-07-14 19:52:38,572 [INFO] ✓ Scraped and saved acura/tl/2004
+2025-07-14 19:52:47,119 [INFO] ✓ Scraped and saved acura/tsx/2004
+2025-07-14 19:52:49,429 [INFO] 🏁 Marked ACURA 2004 as complete.
+2025-07-14 19:52:51,489 [INFO] Discovering models for ACURA 2003...
+2025-07-14 19:53:00,368 [INFO] Found 9 models for ACURA 2003.
+2025-07-14 19:53:11,798 [INFO] ✓ Scraped and saved acura/cl/2003
+2025-07-14 19:53:20,888 [INFO] ✓ Scraped and saved acura/cl-type-s/2003
+2025-07-14 19:53:30,427 [INFO] ✓ Scraped and saved acura/el/2003
+2025-07-14 19:53:38,427 [INFO] ✓ Scraped and saved acura/mdx/2003
+2025-07-14 19:53:46,534 [INFO] ✓ Scraped and saved acura/nsx/2003
+2025-07-14 19:53:55,888 [INFO] ✓ Scraped and saved acura/rl/2003
+2025-07-14 19:54:07,165 [INFO] ✓ Scraped and saved acura/rsx/2003
+2025-07-14 19:54:15,089 [INFO] ✓ Scraped and saved acura/tl/2003
+2025-07-14 19:54:24,873 [INFO] ✓ Scraped and saved acura/tsx/2003
+2025-07-14 19:54:27,538 [INFO] 🏁 Marked ACURA 2003 as complete.
+2025-07-14 19:54:30,529 [INFO] Discovering models for ACURA 2002...
+2025-07-14 19:54:44,266 [INFO] Found 8 models for ACURA 2002.
+2025-07-14 19:55:13,019 [WARNING] Timeout for https://www.wheel-size.com/size/acura/cl/2002/. Attempt 1/5. Retrying in 30s...
+2025-07-14 19:56:05,834 [WARNING] Timeout for https://www.wheel-size.com/size/acura/cl/2002/. Attempt 2/5. Retrying in 60s...
+2025-07-14 19:57:33,506 [WARNING] Timeout for https://www.wheel-size.com/size/acura/cl/2002/. Attempt 3/5. Retrying in 120s...
+2025-07-14 20:00:01,821 [WARNING] Timeout for https://www.wheel-size.com/size/acura/cl/2002/. Attempt 4/5. Retrying in 240s...
+2025-07-14 20:04:11,407 [INFO] ✓ Scraped and saved acura/cl/2002
+2025-07-14 20:04:20,946 [INFO] ✓ Scraped and saved acura/cl-type-s/2002
+2025-07-14 20:04:29,609 [INFO] ✓ Scraped and saved acura/el/2002
+2025-07-14 20:04:37,937 [INFO] ✓ Scraped and saved acura/mdx/2002
+2025-07-14 20:04:45,777 [INFO] ✓ Scraped and saved acura/nsx/2002
+2025-07-14 20:04:53,073 [INFO] ✓ Scraped and saved acura/rl/2002
+2025-07-14 20:05:01,863 [INFO] ✓ Scraped and saved acura/rsx/2002
+2025-07-14 20:05:09,098 [INFO] ✓ Scraped and saved acura/tl/2002
+2025-07-14 20:05:10,774 [INFO] 🏁 Marked ACURA 2002 as complete.
+2025-07-14 20:05:13,559 [INFO] Discovering models for ACURA 2001...
+2025-07-14 20:05:22,244 [INFO] Found 9 models for ACURA 2001.
+2025-07-14 20:05:29,890 [INFO] ✓ Scraped and saved acura/cl/2001
+2025-07-14 20:05:36,813 [INFO] ✓ Scraped and saved acura/cl-type-s/2001
+2025-07-14 20:05:46,462 [INFO] ✓ Scraped and saved acura/el/2001
+2025-07-14 20:05:53,357 [INFO] ✓ Scraped and saved acura/integra/2001
+2025-07-14 20:06:00,080 [INFO] ✓ Scraped and saved acura/integra-type-r/2001
+2025-07-14 20:06:08,228 [INFO] ✓ Scraped and saved acura/mdx/2001
+2025-07-14 20:06:17,196 [INFO] ✓ Scraped and saved acura/nsx/2001
+2025-07-14 20:06:24,520 [INFO] ✓ Scraped and saved acura/rl/2001
+2025-07-14 20:06:32,302 [INFO] ✓ Scraped and saved acura/tl/2001
+2025-07-14 20:06:33,921 [INFO] 🏁 Marked ACURA 2001 as complete.
+2025-07-14 20:06:36,345 [INFO] Discovering models for ACURA 2000...
+2025-07-14 20:06:49,989 [INFO] Found 7 models for ACURA 2000.
+2025-07-14 20:06:56,723 [INFO] ✓ Scraped and saved acura/cl/2000
+2025-07-14 20:07:05,131 [INFO] ✓ Scraped and saved acura/el/2000
+2025-07-14 20:07:13,491 [INFO] ✓ Scraped and saved acura/integra/2000
+2025-07-14 20:07:20,786 [INFO] ✓ Scraped and saved acura/integra-type-r/2000
+2025-07-14 20:07:49,087 [WARNING] Timeout for https://www.wheel-size.com/size/acura/nsx/2000/. Attempt 1/5. Retrying in 30s...
+2025-07-14 20:08:42,045 [WARNING] Timeout for https://www.wheel-size.com/size/acura/nsx/2000/. Attempt 2/5. Retrying in 60s...
+2025-07-14 20:10:09,616 [WARNING] Timeout for https://www.wheel-size.com/size/acura/nsx/2000/. Attempt 3/5. Retrying in 120s...
+2025-07-14 20:12:37,492 [WARNING] Timeout for https://www.wheel-size.com/size/acura/nsx/2000/. Attempt 4/5. Retrying in 240s...
+2025-07-14 20:16:46,535 [INFO] ✓ Scraped and saved acura/nsx/2000
+2025-07-14 20:16:57,413 [INFO] ✓ Scraped and saved acura/rl/2000
+2025-07-14 20:17:06,250 [INFO] ✓ Scraped and saved acura/tl/2000
+2025-07-14 20:17:08,602 [INFO] 🏁 Marked ACURA 2000 as complete.
+2025-07-14 20:17:10,077 [INFO] Discovering models for ALFA-ROMEO 2025...
+2025-07-14 20:17:20,091 [INFO] Found 4 models for ALFA-ROMEO 2025.
+2025-07-14 20:17:31,024 [INFO] ✓ Scraped and saved alfa-romeo/giulia/2025
+2025-07-14 20:17:39,594 [WARNING] ✗ No US market data found for alfa-romeo/junior/2025
+2025-07-14 20:17:48,707 [INFO] ✓ Scraped and saved alfa-romeo/stelvio/2025
+2025-07-14 20:17:58,787 [INFO] ✓ Scraped and saved alfa-romeo/tonale/2025
+2025-07-14 20:18:01,625 [INFO] 🏁 Marked ALFA-ROMEO 2025 as complete.
+2025-07-14 20:18:04,811 [INFO] Discovering models for ALFA-ROMEO 2024...
+2025-07-14 20:18:14,024 [INFO] Found 4 models for ALFA-ROMEO 2024.
+2025-07-14 20:18:22,985 [INFO] ✓ Scraped and saved alfa-romeo/giulia/2024
