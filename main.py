@@ -175,7 +175,6 @@ TARGET_MAKES = [
 # Years to scrape
 TARGET_YEARS = list(range(2000, 2026))  # 2000-2025
 
-# --- CORRECTED FUNCTION ---
 def get_models_for_make_year(page, make, year):
     """
     Navigate to wheel-size.com, select make and year, and get available models.
@@ -187,32 +186,23 @@ def get_models_for_make_year(page, make, year):
         
         page.wait_for_selector('#vehicle_form', timeout=30000)
 
-        # Step 1: Select the Make
         page.select_option('select#auto_vendor', make)
         
-        # Step 2: Wait for the Year dropdown to be enabled, then select the Year
         page.wait_for_selector('select#auto_year:not([disabled])', timeout=15000)
         page.select_option('select#auto_year', str(year))
 
-        # --- NEW LOGIC TO HANDLE THE CUSTOM SELECT2 DROPDOWN ---
-        # Step 3: Wait for the Model dropdown to be enabled and then CLICK it to reveal the options list
         model_dropdown_selector = 'span[aria-labelledby="select2-auto_model-container"]'
         page.wait_for_selector(f'select#auto_model:not([disabled])', timeout=15000)
         page.click(model_dropdown_selector)
 
-        # Step 4: Wait for the dynamically generated list of models to appear
         results_list_selector = 'ul.select2-results__options'
         page.wait_for_selector(results_list_selector, timeout=10000)
 
-        # Step 5: Extract the text from all the 'li' elements in the list
-        # This runs JavaScript in the browser to get the text of each model option
         model_texts = page.eval_on_selector_all(
             'ul.select2-results__options li.select2-results__option--selectable',
-            # JS function to map over nodes, get their text, and filter out the placeholder
             'nodes => nodes.map(node => node.textContent).filter(text => text !== "Model")'
         )
         
-        # Step 6: Convert the display text (e.g., "Integra Type-S") to the URL value (e.g., "integra-type-s")
         models = [text.strip().lower().replace(' ', '-') for text in model_texts]
 
         if models:
@@ -258,23 +248,32 @@ def scrape_vehicle_data(page, make, model, year):
         print(f"✗ Error scraping {make} {model} {year}: {e}")
         return None
 
+# --- UPDATED FUNCTION ---
 def save_vehicle_data(data, make, model, year):
     """
-    Save vehicle data to a JSON file with the naming convention make__model__year.json
+    Save vehicle data to a JSON file in a nested directory structure:
+    results/make/year/make__model__year.json
     """
     if not data:
         return False
         
     try:
-        make_clean = make.lower().replace('-', '_').replace(' ', '_')
-        model_clean = model.lower().replace('-', '_').replace(' ', '_')
-        year_str = str(year)
+        # Create clean names for directories and the file
+        make_dir_name = make.lower().replace('-', '_').replace(' ', '_')
+        model_file_name = model.lower().replace('-', '_').replace(' ', '_')
+        year_dir_name = str(year)
         
-        filename = f"{make_clean}__{model_clean}__{year_str}.json"
+        # Define the nested directory path
+        directory_path = os.path.join('results', make_dir_name, year_dir_name)
         
-        os.makedirs('results', exist_ok=True)
-        filepath = os.path.join('results', filename)
+        # Create the nested directories if they don't exist
+        os.makedirs(directory_path, exist_ok=True)
         
+        # Create the final filename and the full path to it
+        filename = f"{make_dir_name}__{model_file_name}__{year_dir_name}.json"
+        filepath = os.path.join(directory_path, filename)
+        
+        # Save the data
         with open(filepath, 'w', encoding='utf-8') as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
         
@@ -285,9 +284,11 @@ def save_vehicle_data(data, make, model, year):
         print(f"✗ Error saving data for {make} {model} {year}: {e}")
         return False
 
+# --- UPDATED FUNCTION ---
 def scrape_all_vehicles():
     """
-    Main function to scrape all target makes, years, and models.
+    Main function to scrape all target makes, years, and models, saving them
+    into a nested directory structure.
     """
     print("Starting comprehensive vehicle data scraping...")
     print(f"Target makes: {len(TARGET_MAKES)}")
@@ -328,10 +329,14 @@ def scrape_all_vehicles():
                         continue
                     
                     for model in models:
-                        make_clean = make.lower().replace('-', '_').replace(' ', '_')
-                        model_clean = model.lower().replace('-', '_').replace(' ', '_')
-                        filename = f"{make_clean}__{model_clean}__{year}.json"
-                        filepath = os.path.join('results', filename)
+                        # --- MODIFIED LOGIC TO CHECK FOR FILE IN NESTED DIRECTORY ---
+                        make_dir_name = make.lower().replace('-', '_').replace(' ', '_')
+                        model_file_name = model.lower().replace('-', '_').replace(' ', '_')
+                        year_dir_name = str(year)
+                        
+                        filename = f"{make_dir_name}__{model_file_name}__{year_dir_name}.json"
+                        directory_path = os.path.join('results', make_dir_name, year_dir_name)
+                        filepath = os.path.join(directory_path, filename)
                         
                         if os.path.exists(filepath):
                             print(f"⏭️  Skipping {make} {model} {year} - file already exists")
@@ -395,7 +400,7 @@ if __name__ == "__main__":
     
     if len(sys.argv) > 1 and sys.argv[1] == "test":
         print("Running in TEST mode.")
-        scrape_single_vehicle("acura", "rdx", 2024)
+        scrape_single_vehicle("ford", "mustang", 2024)
     else:
         print("Running in FULL mode. This will scrape all target vehicles.")
         print("This may take several hours. Press Ctrl+C to stop.")
