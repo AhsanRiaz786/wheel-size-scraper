@@ -1,0 +1,35 @@
+[
+  {
+    "make": "BMW",
+    "model": "M3",
+    "year": 2002,
+    "engine": "3.2i",
+    "hp": 333,
+    "generation": "E46 [2000 .. 2006]",
+    "production": "[2001 .. 2006]",
+    "centerbore": "72.6 mm",
+    "bolt_pattern": "5x120",
+    "wheel_fasterns": "Lug bolts",
+    "thread_size": "M12 x 1.5",
+    "wheel_tightening_torque": "85 lbf ft", // make sure this is not in NM, but in lbf ft,
+    "tires": [
+      {
+        "front_size": "225/45R18",
+        "rear_size": "225/40R18",
+        "front_rim": "8.5Jx18 ET55",
+        "rear_rim": "9Jx18 ET26",
+        "front_offset": "45-49",
+        "rear_offset": "24-28",
+        "front_backspacing": "6.34",
+        "rear_backspacing": "6.02",
+        "front_tire_weight": "22.4",
+        "rear_tire_weight": "25",
+        "front_max_psi": "33",
+        "rear_max_psi": "35",
+        "original_equipment": true,
+        "recommended_for_winter": false
+      }
+      // ... for each tire in the table below
+    ]
+  }
+]
