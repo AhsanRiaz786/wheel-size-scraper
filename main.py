@@ -1,7 +1,8 @@
 import json
 import re
 import time
-from playwright.sync_api import sync_playwright
+import os
+from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 from bs4 import BeautifulSoup
 
 def format_number(num_str):
@@ -72,7 +73,7 @@ def parse_vehicle_data(html_content):
     model = h1.get('data-model-name')
     year = int(h1.get('data-year'))
 
-    # --- NEW: Get the source HTML for the entire modifications block ---
+    # Get the source HTML for the entire modifications block
     trims_list_div = soup.find('div', class_='trims-list')
     source_html = str(trims_list_div) if trims_list_div else ""
 
@@ -80,7 +81,7 @@ def parse_vehicle_data(html_content):
     trim_panels = soup.find_all('div', class_='panel', id=lambda x: x and x.startswith('trim-'))
 
     for panel in trim_panels:
-        # --- NEW: Filter to only include panels for the USA market (USDM) ---
+        # Filter to only include panels for the USA market (USDM)
         panel_classes = panel.get('class', [])
         if 'region-trim-usdm' not in panel_classes:
             continue # Skip this panel if it's not for the US market
@@ -160,23 +161,151 @@ def parse_vehicle_data(html_content):
         results.append(trim_info)
     return results
 
-def scrape_and_parse():
-    """
-    Launches a browser with anti-scraping measures, navigates to the URL, 
-    waits for dynamic content, scrapes it, and then parses the data.
-    """
-    url = "https://www.wheel-size.com/size/audi/a4/2024/"
-    html_content = None
+# Target car makes to scrape
+TARGET_MAKES = [
+    'acura', 'alfa-romeo', 'aston-martin', 'audi', 'bentley', 'bmw', 'bugatti', 'buick',
+    'cadillac', 'chevrolet', 'chrysler', 'dodge', 'ferrari', 'ford', 'genesis', 
+    'gmc', 'honda', 'hummer', 'hyundai', 'infiniti', 'jaguar', 'jeep', 'kia',
+    'lamborghini', 'land-rover', 'lexus', 'lincoln', 'lotus', 'maserati', 'maybach', 'mazda', 
+    'mclaren', 'mercedes-benz', 'mercury', 'mini', 'mitsubishi', 'nissan', 'oldsmobile',
+    'pontiac', 'porsche', 'ram', 'rolls-royce', 'saab', 'saturn', 'scion', 'subaru',
+    'suzuki', 'tesla', 'toyota', 'volkswagen', 'volvo'
+]
 
+# Years to scrape
+TARGET_YEARS = list(range(2000, 2026))  # 2000-2025
+
+# --- CORRECTED FUNCTION ---
+def get_models_for_make_year(page, make, year):
+    """
+    Navigate to wheel-size.com, select make and year, and get available models.
+    This version correctly interacts with the Select2 JavaScript widgets.
+    """
+    try:
+        print(f"Getting models for {make} {year}")
+        page.goto("https://www.wheel-size.com", wait_until='domcontentloaded', timeout=60000)
+        
+        page.wait_for_selector('#vehicle_form', timeout=30000)
+
+        # Step 1: Select the Make
+        page.select_option('select#auto_vendor', make)
+        
+        # Step 2: Wait for the Year dropdown to be enabled, then select the Year
+        page.wait_for_selector('select#auto_year:not([disabled])', timeout=15000)
+        page.select_option('select#auto_year', str(year))
+
+        # --- NEW LOGIC TO HANDLE THE CUSTOM SELECT2 DROPDOWN ---
+        # Step 3: Wait for the Model dropdown to be enabled and then CLICK it to reveal the options list
+        model_dropdown_selector = 'span[aria-labelledby="select2-auto_model-container"]'
+        page.wait_for_selector(f'select#auto_model:not([disabled])', timeout=15000)
+        page.click(model_dropdown_selector)
+
+        # Step 4: Wait for the dynamically generated list of models to appear
+        results_list_selector = 'ul.select2-results__options'
+        page.wait_for_selector(results_list_selector, timeout=10000)
+
+        # Step 5: Extract the text from all the 'li' elements in the list
+        # This runs JavaScript in the browser to get the text of each model option
+        model_texts = page.eval_on_selector_all(
+            'ul.select2-results__options li.select2-results__option--selectable',
+            # JS function to map over nodes, get their text, and filter out the placeholder
+            'nodes => nodes.map(node => node.textContent).filter(text => text !== "Model")'
+        )
+        
+        # Step 6: Convert the display text (e.g., "Integra Type-S") to the URL value (e.g., "integra-type-s")
+        models = [text.strip().lower().replace(' ', '-') for text in model_texts]
+
+        if models:
+            print(f"Found {len(models)} models for {make} {year}")
+        else:
+            print(f"No models found for {make} {year} (this may be expected).")
+            
+        return models
+        
+    except PlaywrightTimeoutError:
+        print(f"Timed out waiting for models for {make} {year}. It's likely none exist for this combination.")
+        return []
+    except Exception as e:
+        print(f"An error occurred getting models for {make} {year}: {e}")
+        return []
+
+def scrape_vehicle_data(page, make, model, year):
+    """
+    Scrape data for a specific make/model/year combination.
+    Returns parsed data or None if failed.
+    """
+    try:
+        url = f"https://www.wheel-size.com/size/{make}/{model}/{year}/"
+        print(f"Scraping: {url}")
+        
+        page.goto(url, wait_until='networkidle', timeout=60000)
+        page.wait_for_selector('.trims-list .panel', timeout=30000)
+        
+        html_content = page.content()
+        data = parse_vehicle_data(html_content)
+        
+        if data:
+            print(f"✓ Successfully scraped {make} {model} {year} - {len(data)} trim(s)")
+            return data
+        else:
+            print(f"✗ No US market data found for {make} {model} {year}")
+            return None
+            
+    except PlaywrightTimeoutError:
+        print(f"✗ Timed out or no content found for {make} {model} {year}. The page might not exist.")
+        return None
+    except Exception as e:
+        print(f"✗ Error scraping {make} {model} {year}: {e}")
+        return None
+
+def save_vehicle_data(data, make, model, year):
+    """
+    Save vehicle data to a JSON file with the naming convention make__model__year.json
+    """
+    if not data:
+        return False
+        
+    try:
+        make_clean = make.lower().replace('-', '_').replace(' ', '_')
+        model_clean = model.lower().replace('-', '_').replace(' ', '_')
+        year_str = str(year)
+        
+        filename = f"{make_clean}__{model_clean}__{year_str}.json"
+        
+        os.makedirs('results', exist_ok=True)
+        filepath = os.path.join('results', filename)
+        
+        with open(filepath, 'w', encoding='utf-8') as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+        
+        print(f"💾 Saved to: {filepath}")
+        return True
+        
+    except Exception as e:
+        print(f"✗ Error saving data for {make} {model} {year}: {e}")
+        return False
+
+def scrape_all_vehicles():
+    """
+    Main function to scrape all target makes, years, and models.
+    """
+    print("Starting comprehensive vehicle data scraping...")
+    print(f"Target makes: {len(TARGET_MAKES)}")
+    print(f"Target years: {TARGET_YEARS[0]}-{TARGET_YEARS[-1]}")
+    
+    total_scraped = 0
+    total_saved = 0
+    
     with sync_playwright() as p:
         browser = p.chromium.launch(
             headless=True,
             args=['--disable-blink-features=AutomationControlled', '--disable-dev-shm-usage', '--no-sandbox']
         )
-        page = browser.new_page(
+        context = browser.new_context(
             user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
             viewport={'width': 1920, 'height': 1080}
         )
+        page = context.new_page()
         page.set_extra_http_headers({
             'Accept-Language': 'en-US,en;q=0.9', 'Accept-Encoding': 'gzip, deflate, br',
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
@@ -184,31 +313,96 @@ def scrape_and_parse():
         })
         
         try:
-            print(f"Opening URL: {url}")
-            page.goto(url, wait_until='networkidle', timeout=60000)
-            print("Page loaded, waiting for dynamic data tables...")
-            page.wait_for_selector('.trims-list .panel', timeout=30000)
-            time.sleep(3)
-            print("Dynamic content loaded. Extracting HTML...")
-            html_content = page.content()
+            for make in TARGET_MAKES:
+                print(f"\n{'='*60}")
+                print(f"Processing make: {make.upper()}")
+                print(f"{'='*60}")
+                
+                for year in reversed(TARGET_YEARS): # Scrape newest years first
+                    print(f"\n--- {make.upper()} {year} ---")
+                    
+                    models = get_models_for_make_year(page, make, year)
+                    
+                    if not models:
+                        print(f"No models found to scrape for {make} {year}")
+                        continue
+                    
+                    for model in models:
+                        make_clean = make.lower().replace('-', '_').replace(' ', '_')
+                        model_clean = model.lower().replace('-', '_').replace(' ', '_')
+                        filename = f"{make_clean}__{model_clean}__{year}.json"
+                        filepath = os.path.join('results', filename)
+                        
+                        if os.path.exists(filepath):
+                            print(f"⏭️  Skipping {make} {model} {year} - file already exists")
+                            continue
+                        
+                        data = scrape_vehicle_data(page, make, model, year)
+                        total_scraped += 1
+                        
+                        if save_vehicle_data(data, make, model, year):
+                            total_saved += 1
+                        
+                        time.sleep(1) # Small delay to be respectful
+                
+                print(f"\nCompleted {make.upper()}")
+                
+        except KeyboardInterrupt:
+            print(f"\n\n⚠️  Scraping interrupted by user")
         except Exception as e:
-            print(f"An error occurred during scraping: {e}")
+            print(f"\n\n❌ Fatal error: {e}")
         finally:
-            print("Closing browser.")
+            browser.close()
+    
+    print(f"\n{'='*60}")
+    print(f"SCRAPING COMPLETE")
+    print(f"{'='*60}")
+    print(f"Total vehicle pages attempted: {total_scraped}")
+    print(f"Total files saved: {total_saved}")
+    print(f"Results saved in 'results/' directory")
+
+def scrape_single_vehicle(make, model, year):
+    """
+    Scrape a single vehicle for testing purposes.
+    """
+    print(f"Scraping single vehicle: {make} {model} {year}")
+    
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=False) # Use headless=False for debugging
+        context = browser.new_context(user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36')
+        page = context.new_page()
+        
+        try:
+            models = get_models_for_make_year(page, make, year)
+            print(f"Available models for {make} {year}: {models}")
+            if model in models:
+                 data = scrape_vehicle_data(page, make, model, year)
+                 if data:
+                     save_vehicle_data(data, make, model, year)
+                     print("\n--- SAMPLE OUTPUT ---")
+                     print(json.dumps(data[0], indent=2))
+            else:
+                print(f"Model '{model}' not found in the list for {make} {year}.")
+
+        finally:
             browser.close()
 
-    if html_content:
-        print("Parsing data for USA Market...")
-        data = parse_vehicle_data(html_content)
-        if data:
-            print("\n--- SCRAPED DATA ---\n")
-            # Note: The 'html_output' is very long, so it will make the printed output large.
-            # For cleaner viewing, you could temporarily comment out the next line.
-            print(json.dumps(data, indent=2))
-        else:
-            print("Parsing complete. No data found for the USA Market on this page.")
-    else:
-        print("Could not retrieve HTML content to parse.")
-
 if __name__ == "__main__":
-    scrape_and_parse()
+    import sys
+    
+    print("🚗 Wheel Size Data Scraper")
+    print("=" * 50)
+    
+    if len(sys.argv) > 1 and sys.argv[1] == "test":
+        print("Running in TEST mode.")
+        scrape_single_vehicle("acura", "rdx", 2024)
+    else:
+        print("Running in FULL mode. This will scrape all target vehicles.")
+        print("This may take several hours. Press Ctrl+C to stop.")
+        try:
+            if input("Continue? (y/N): ").strip().lower() in ['y', 'yes']:
+                scrape_all_vehicles()
+            else:
+                print("Scraping cancelled by user.")
+        except KeyboardInterrupt:
+            print("\nScraping cancelled by user.")
