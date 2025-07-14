@@ -59,7 +59,7 @@ def get_staggered_data(cell, is_imperial=False):
 
 def parse_vehicle_data(html_content):
     """
-    Parses the HTML content of a vehicle page to extract wheel and tire data.
+    Parses the HTML content to extract wheel and tire data only for the USA market.
     """
     soup = BeautifulSoup(html_content, 'html.parser')
     
@@ -72,22 +72,33 @@ def parse_vehicle_data(html_content):
     model = h1.get('data-model-name')
     year = int(h1.get('data-year'))
 
+    # --- NEW: Get the source HTML for the entire modifications block ---
+    trims_list_div = soup.find('div', class_='trims-list')
+    source_html = str(trims_list_div) if trims_list_div else ""
+
     results = []
     trim_panels = soup.find_all('div', class_='panel', id=lambda x: x and x.startswith('trim-'))
 
     for panel in trim_panels:
-        trim_info = { "make": make, "model": model, "year": year, "tires": [] }
+        # --- NEW: Filter to only include panels for the USA market (USDM) ---
+        panel_classes = panel.get('class', [])
+        if 'region-trim-usdm' not in panel_classes:
+            continue # Skip this panel if it's not for the US market
+
+        trim_info = { 
+            "html_output": source_html,
+            "make": make, 
+            "model": model, 
+            "year": year, 
+            "tires": [] 
+        }
+
         panel_hdr = panel.find('div', class_='panel-hdr')
-        
-        # --- FIXED ENGINE/TRIM NAME EXTRACTION ---
         trim_name_span = panel_hdr.find('span', class_='panel-hdr-trim-name')
         if trim_name_span and trim_name_span.get('data-trim-name'):
-            # This is the most reliable source for the engine/trim name.
             trim_info['engine'] = trim_name_span['data-trim-name']
         else:
-            # Fallback to parsing text content if the attribute is missing.
             trim_info['engine'] = get_clean_text(trim_name_span)
-        # --- END OF FIX ---
 
         power_span = panel_hdr.find(lambda tag: 'hp' in tag.text and tag.name == 'span')
         if power_span:
@@ -159,23 +170,17 @@ def scrape_and_parse():
 
     with sync_playwright() as p:
         browser = p.chromium.launch(
-            headless=True,  # Set to False to see browser actions, True for production
-            args=[
-                '--disable-blink-features=AutomationControlled',
-                '--disable-dev-shm-usage',
-                '--no-sandbox'
-            ]
+            headless=True,
+            args=['--disable-blink-features=AutomationControlled', '--disable-dev-shm-usage', '--no-sandbox']
         )
         page = browser.new_page(
             user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
             viewport={'width': 1920, 'height': 1080}
         )
         page.set_extra_http_headers({
-            'Accept-Language': 'en-US,en;q=0.9',
-            'Accept-Encoding': 'gzip, deflate, br',
+            'Accept-Language': 'en-US,en;q=0.9', 'Accept-Encoding': 'gzip, deflate, br',
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-            'Connection': 'keep-alive',
-            'Upgrade-Insecure-Requests': '1',
+            'Connection': 'keep-alive', 'Upgrade-Insecure-Requests': '1',
         })
         
         try:
@@ -186,7 +191,6 @@ def scrape_and_parse():
             time.sleep(3)
             print("Dynamic content loaded. Extracting HTML...")
             html_content = page.content()
-
         except Exception as e:
             print(f"An error occurred during scraping: {e}")
         finally:
@@ -194,13 +198,15 @@ def scrape_and_parse():
             browser.close()
 
     if html_content:
-        print("Parsing data...")
+        print("Parsing data for USA Market...")
         data = parse_vehicle_data(html_content)
         if data:
             print("\n--- SCRAPED DATA ---\n")
+            # Note: The 'html_output' is very long, so it will make the printed output large.
+            # For cleaner viewing, you could temporarily comment out the next line.
             print(json.dumps(data, indent=2))
         else:
-            print("Parsing failed. No data was extracted.")
+            print("Parsing complete. No data found for the USA Market on this page.")
     else:
         print("Could not retrieve HTML content to parse.")
 
